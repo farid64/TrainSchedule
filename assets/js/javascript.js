@@ -23,7 +23,7 @@ $("#add-train-btn").on("click", function(event){
 
   const newTrain = {
     name: trainName,
-    desination: destination,
+    destination: destination,
     firstTrain: firstTrain,
     frequency: frequency 
   };
@@ -40,7 +40,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(childSnapshot.val());
 
   const trainName = childSnapshot.val().name;
-  const destination = childSnapshot.val().desination;
+  const destination = childSnapshot.val().destination;
   const firstTrain = childSnapshot.val().firstTrain;
   const frequency = childSnapshot.val().frequency;
 
@@ -56,8 +56,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     "</td><td>" + minutesAway +
     "</td></tr>"
   );
-
-
 
 });
 
